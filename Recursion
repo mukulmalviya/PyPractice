@@ -1,4 +1,31 @@
 #!/usr/bin/python3
 
-a=3
-print(f"dughsv {a}")
+# Tower of hanoi
+# need a lot of work
+
+def printPos(tuplename,cheez):
+    if(tilesAtPos != (0,0,tiles)):
+        print(f"ini= {tilesAtPos[0]} med= {tilesAtPos[1]} final= {tilesAtPos[2]}")
+        print("Unsolved or Wrong config or invalid number of tiles")
+    else:
+        print(f"ini= {tilesAtPos[0]} med= {tilesAtPos[1]} final= {tilesAtPos[2]}")
+        print("Solved")
+
+#printPos((0,4,4))
+
+def moveTilesbyRecursion(pos,tiles):
+    final =0
+    mid = 0
+    if pos == (0,0,tiles):
+        return (0,0,tiles)
+    pos = moveTilesbyRecursion((tiles-1,mid,final+1),tiles)
+
+
+tiles = 0
+tiles = input("Enter no. of tiles")
+tilesAtPos = (tiles,0,0)
+print("intial tower")
+printPos(tilesAtPos,tiles)
+newpos = moveTilesbyRecursion(tilesAtPos,tiles)
+print("Final tower")
+printPos(newpos,tiles)
